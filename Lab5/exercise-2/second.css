@@ -82,7 +82,7 @@ a:hover:not(.active) {
     background-color: #111;
 }
 
-#traffic-light {
+.traffic-light {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,15 +102,15 @@ a:hover:not(.active) {
     background-color: #aaa;
 }
 
-#red-light {
+.red-light {
     background-color: grey;
 }
 
-#yellow-light {
+.yellow-light {
     background-color: grey;
 }
 
-#green-light {
+.green-light {
     background-color: grey;
 }
 

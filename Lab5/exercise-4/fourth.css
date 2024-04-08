@@ -107,14 +107,10 @@ button:active {
     background-color: #367d3e;
 }
 
-#product-list li {
+.product-list li {
     list-style-type: none;
     padding: 5px;
     border-bottom: 1px solid #eee;
-}
-
-#search-results {
-    margin-top: 10px;
 }
 
 .form-section,

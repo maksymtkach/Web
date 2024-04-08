@@ -68,7 +68,7 @@ function placeOrder() {
 }
 
 function updateProductList() {
-    const productsList = document.getElementById('products-list');
+    const productsList = document.querySelector('.products-list');
     productsList.innerHTML = '';
     catalog.forEach((product, productId) => {
         const productLi = document.createElement('li');

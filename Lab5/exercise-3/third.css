@@ -86,18 +86,18 @@ button:active {
     background-color: #367d3e;
 }
 
-#digital-clock {
+.digital-clock {
     margin: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 81px;
 }
 
-#time-left {
+.time-left {
     font-size: 20px;
     margin-bottom: 12px;
 }
 
-#flashing-colon {
+.flashing-colon {
     animation: flash 1s infinite;
 
 }
