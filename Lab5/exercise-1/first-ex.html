@@ -31,28 +31,13 @@
             <label for="halogen">Halogen</label>
         </div>
         
-        <div id="lamp-container">
-            <div class="lamp incandescent" id="lamp-incandescent">
-                <img src="./images/light-lamp.png" alt="Incandescent Lamp">
-                <div class="light-effect"></div>
-            </div>
-    
-            <div class="lamp saving" id="lamp-saving" style="display: none;">
-                <img src="./images/saving-lamp.png" alt="Energy Saving Lamp">
-                <div class="light-effect"></div>
-            </div>
-    
-            <div class="lamp led" id="lamp-led" style="display: none;">
-                <img src="./images/led-lamp.png" alt="LED Lamp">
-                <div class="light-effect"></div>
-            </div>
-    
-            <div class="lamp halogen" id="lamp-halogen" style="display: none;">
-                <img src="./images/halogen-lamp.png" alt="Halogen Lamp">
+        <div class="lamp-container">
+            <div class="lamp" id="dynamic-lamp">
+                <img id="lamp-image" src="" alt="Lamp Image">
                 <div class="light-effect"></div>
             </div>
         </div>
-    
+
         <input type="range" class="slider" min="0" max="100" value="50">
         <div class="temperature-display">Temperature: 2700K</div>
         <button class="toggle-button">Toggle Light</button>
