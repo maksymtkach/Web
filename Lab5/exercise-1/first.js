@@ -25,6 +25,10 @@ const bulbs = {
     }
 };
 
+['click', 'mousemove', 'keypress', 'scroll'].forEach(event => {
+    document.addEventListener(event, resetInactivityTimer, true);
+});
+
 const slider = document.getElementById("slider");
 const button = document.getElementById("btn");
 const bulbTypeRadios = document.querySelectorAll('input[type="radio"][name="lamp-type"]');
@@ -107,18 +111,6 @@ function adjustSlider(bulb) {
         slider.value = bulb.minBrightness;
     } else {
         slider.disabled = true;
-    }
-}
-
-function toggleBulb() {
-    const selectedLampType = document.querySelector('input[type="radio"][name="lamp-type"]:checked').value;
-    const lampToToggle = document.getElementById(`lamp-${selectedLampType}`);
-    const isOn = lampToToggle.classList.contains('light-on');
-
-    if (isOn) {
-        lampToToggle.classList.remove('light-on');
-    } else if (bulbs[selectedLampType].canAdjustBrightness) {
-        lampToToggle.classList.add('light-on');
     }
 }
 
