@@ -1,4 +1,4 @@
-function updateClock() {
+const updateClock = () => {
     const now = new Date();
     document.getElementById('hours').textContent = now.getHours().toString().padStart(2, '0');
     document.getElementById('minutes').textContent = now.getMinutes().toString().padStart(2, '0');
@@ -7,11 +7,22 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-function startCountdown() {
-    const target = new Date(document.getElementById('timer-target').value);
+let countdownInterval;
+
+const startCountdown = () => {
+    clearInterval(countdownInterval);
+
+    const targetValue = document.getElementById('timer-target').value;
+
+    if (!targetValue) {
+        alert('Please enter a valid countdown time.');
+        return;
+    }
+
+    const target = new Date(targetValue);
     const timeLeftDisplay = document.getElementById('time-left');
 
-    function updateCountdown() {
+    const updateCountdown = () => {
         const now = new Date();
         const diff = target - now;
 
@@ -21,20 +32,36 @@ function startCountdown() {
             return;
         }
 
-        const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24)).toString();
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
         const mins = Math.floor((diff / (1000 * 60)) % 60).toString().padStart(2, '0');
         const secs = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
 
-        timeLeftDisplay.textContent = `${hours}:${mins}:${secs}`;
+        const timeString = days ? `${days} days ${hours}:${mins}:${secs}` : `${hours}:${mins}:${secs}`;
+        timeLeftDisplay.textContent = timeString;
     }
 
-    updateCountdown(); 
-    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 1000);
 }
 
-function calculateBirthday() {
-    const birthday = new Date(document.getElementById('birthday-input').value);
+
+const calculateBirthday = () => {
+    const targetValue = document.getElementById('birthday-input').value;
+
+    if (!targetValue) {
+        alert('Please enter a valid date.');
+        return;
+    }
+
+    const birthday = new Date(targetValue);
     const now = new Date();
+
+    if (birthday < now) {
+        alert('Please select a future date for your birthday.');
+        return;
+    }
+
     const nextBirthday = new Date(birthday);
 
     nextBirthday.setFullYear(now.getFullYear());
