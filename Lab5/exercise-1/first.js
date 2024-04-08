@@ -20,7 +20,7 @@ const bulbs = {
     halogen: {
         canAdjustBrightness: true,
         temperature: '3000K',
-        minBrightness: 0,
+        minBrightness: 50,
         maxBrightness: 100
     }
 };
@@ -87,20 +87,22 @@ slider.addEventListener("input", () => {
 
 function handleBulbSelection() {
     const bulbType = this.value;
-    const bulb = bulbs[bulbType];
     displayBulbImage(bulbType);
-    console.log(bulb.temperature);
-    document.querySelector("#temperature-display").innerText = `Temperature: ${bulb.temperature}`;
-    adjustSlider(bulb);
+    displayTemperature(bulbType);
+    adjustSlider(bulbs[bulbType]);
 }
 
 function displayBulbImage(bulbType) {
     document.querySelectorAll('.lamp').forEach(lamp => {
         lamp.style.display = 'none';
     });
-
     const selectedLamp = document.getElementById(`lamp-${bulbType}`);
     selectedLamp.style.display = 'block';
+}
+
+function displayTemperature(bulbType) {
+    const temperatureText = `Temperature: ${bulbs[bulbType].temperature}`;
+    document.querySelector("#temperature-display").innerText = temperatureText;
 }
 
 function adjustSlider(bulb) {
