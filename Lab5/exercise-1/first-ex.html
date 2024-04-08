@@ -21,7 +21,7 @@
             <input type="radio" id="incandescent" name="lamp-type" value="incandescent" checked>
             <label for="incandescent">Incandescent</label>
 
-            <input type="radio" id="energy-saving" name="lamp-type" value="energySaving">
+            <input type="radio" id="saving" name="lamp-type" value="saving">
             <label for="energy-saving">Energy Saving</label>
 
             <input type="radio" id="led" name="lamp-type" value="led">
@@ -33,29 +33,29 @@
         
         <div id="lamp-container">
             <div class="lamp incandescent" id="lamp-incandescent">
-                <img src="../images/light-lamp.png" alt="Incandescent Lamp">
+                <img src="./images/light-lamp.png" alt="Incandescent Lamp">
                 <div class="light-effect"></div>
             </div>
     
-            <div class="lamp energy-saving" id="lamp-energySaving" style="display: none;">
-                <img src="../images/energy-saving-lamp.png" alt="Energy Saving Lamp">
+            <div class="lamp saving" id="lamp-saving" style="display: none;">
+                <img src="./images/saving-lamp.png" alt="Energy Saving Lamp">
                 <div class="light-effect"></div>
             </div>
     
             <div class="lamp led" id="lamp-led" style="display: none;">
-                <img src="../images/led-lamp.png" alt="LED Lamp">
+                <img src="./images/led-lamp.png" alt="LED Lamp">
                 <div class="light-effect"></div>
             </div>
     
             <div class="lamp halogen" id="lamp-halogen" style="display: none;">
-                <img src="../images/halogen-lamp.png" alt="Halogen Lamp">
+                <img src="./images/halogen-lamp.png" alt="Halogen Lamp">
                 <div class="light-effect"></div>
             </div>
         </div>
     
-        <input type="range" id="slider" min="0" max="100" value="50">
-        <div id="temperature-display">Temperature: 2700K</div>
-        <button id="btn">Toggle Light</button>
+        <input type="range" class="slider" min="0" max="100" value="50">
+        <div class="temperature-display">Temperature: 2700K</div>
+        <button class="toggle-button">Toggle Light</button>
     </main>
     <script src="./first.js"></script>
 </body>

@@ -20,7 +20,7 @@ body {
     text-align: center;
 }
 
-input[type="range"] {
+.slider {
     width: 80%;
     margin: 10px;
     background-color: #515151;
@@ -47,7 +47,7 @@ main {
     background: #515151;
 }
 
-#btn {
+.toggle-button {
     font-size: 20px;
     margin: 10px;
     padding: 10px 20px;
@@ -59,11 +59,11 @@ main {
     cursor: pointer;
 }
 
-#btn:hover {
+.toggle-button:hover {
     background-color: #45a049;
 }
 
-#btn:active {
+.toggle-button:active {
     background-color: #367d3e;
 }
 
@@ -141,7 +141,7 @@ input[type="radio"] {
     box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.7);
 }
 
-.lamp.light-on.energy-saving .light-effect {
+.lamp.light-on.saving .light-effect {
     opacity: 1;
     box-shadow: 0 0 50px 50px rgba(225, 225, 116, 0.7);
 }
