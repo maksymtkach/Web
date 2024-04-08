@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #838383;
+}
+
+main {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    padding: 24px;
+    border-radius: 24px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+    background: #515151;
+}
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    width: 300px;
+    font-size: 20px;
+    color: #111;
+    line-height: 30px;
+}
+
+button {
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding: 10px 20px;
+    width: 310px;
+    background-color: #2a752c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #367d3e;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #515151;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(252, 252, 252);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover:not(.active) {
+    background-color: #111;
+}
+
+#traffic-light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 250px;
+    margin-bottom: 16px;
+    width: 100px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #aaa;
+}
+
+#red-light {
+    background-color: grey;
+}
+
+#yellow-light {
+    background-color: grey;
+}
+
+#green-light {
+    background-color: grey;
+}
+
+@keyframes flash {
+
+    0%,
+    100% {
+        background-color: grey;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Clock</title>
+    <link rel="stylesheet" href="./third.css">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="../exercise-1/first-ex.html">Task 1</a></li>
+            <li><a href="../exercise-2/second-ex.html">Task 2</a></li>
+            <li><a href="../exercise-3/third-ex.html">Task 3</a></li>
+            <li><a href="../exercise-4/fourth-ex.html">Task 4</a></li>
+          </ul>
+    </header>
+    <main>
+        <div id="digital-clock">
+            <span id="hours"></span><span id="flashing-colon">:</span><span id="minutes"></span><span id="flashing-colon">:</span><span id="seconds"></span>
+            
+        </div>
+        <div id="countdown-timer">
+            <input type="datetime-local" id="timer-target" >
+            <button onclick="startCountdown()">Start Countdown</button>
+            <div id="time-left"></div>
+        </div>
+        <div>
+            <input type="date" id="birthday-input">
+            <button onclick="calculateBirthday()">Calculate</button>
+            <div id="birthday-countdown"></div>
+        </div>
+        
+                
+    </main>
+    <footer>
+    </footer>
+    <script src="./third.js"></script>
+</body>
+</html>
