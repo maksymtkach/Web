@@ -1,0 +1,87 @@
+ul.visible {
+    display: block !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(87, 87, 87);
+    font-family: Arial, sans-serif;
+    padding-bottom: 50px; /* Adjust based on the footer's height */
+}
+
+#tree-container,
+ul ul {
+    list-style-type: none;
+}
+
+#tree-container h2,
+#tree-container h3,
+#tree-container h4 {
+    cursor: pointer;
+    font-size: 18px;
+    border: 3px double #181818;
+    
+    border-radius: 4px;
+    height: 38px;
+    padding: 10px;
+    margin: 0 16px 8px;
+}
+
+#tree-container h4 {
+    background-color: rgb(44, 44, 44);
+    color: rgb(218, 218, 218);
+}
+
+#tree-container h3 {
+    background-color: rgb(34, 34, 34);
+    color: rgb(218, 218, 218);
+}
+
+#tree-container h2 {
+    background-color: rgb(24, 24, 24);
+    color: rgb(218, 218, 218);
+}
+
+ul ul {
+    display: none;
+    margin-left: 24px;
+}
+
+h1 {
+    color:rgb(218, 218, 218);;
+    line-height: 2.5em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(218, 218, 218);;
+}
+
+footer {
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-color: rgb(59, 59, 59);
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(200, 200, 200);
+    font-size: 1.2rem;
+}
+
+footer a:hover {
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
