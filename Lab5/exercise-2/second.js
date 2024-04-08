@@ -22,35 +22,49 @@ const switchLight = (nextLight) => {
     stateDescription.textContent = nextLight.toUpperCase();
 };
 
+
+
 const getDuration = (light) => {
     const durationInput = document.getElementById(`${light}-duration`);
-    let duration = parseInt(durationInput.value);
-    if (isNaN(duration)) {
-        if (light === 'red') return 5;
-        if (light === 'yellow') return 3;
-        if (light === 'green') return 7;
+    let duration = parseInt(durationInput.value, 10);
+
+    if (duration < 0 || duration > 60) {
+        alert(`Please enter a valid duration for the ${light} light (0-60 seconds).`);
+        return false;
     }
-    return duration;
+    return duration || (light === 'red' ? 5 : light === 'yellow' ? 3 : 7);
 };
 
 const cycleLights = () => {
+    let duration;
+
     switch (currentLight) {
         case 'red':
+            duration = getDuration('red');
+            if (duration === false) return; // Stop if invalid
             switchLight('red');
-            setTimeout(() => { currentLight = 'yellow'; cycleLights(); }, getDuration('red') * 1000);
+            currentLight = 'yellow';
+            setTimeout(cycleLights, duration * 1000);
             break;
         case 'yellow':
+            duration = getDuration('yellow');
+            if (duration === false) return; // Stop if invalid
             switchLight('yellow');
-            setTimeout(() => { currentLight = 'green'; cycleLights(); }, getDuration('yellow') * 1000);
+            currentLight = 'green';
+            setTimeout(cycleLights, duration * 1000);
             break;
         case 'green':
+            duration = getDuration('green');
+            if (duration === false) return; // Stop if invalid
             switchLight('green');
-            setTimeout(() => { currentLight = 'flashing yellow'; cycleLights(); }, getDuration('green') * 1000);
+            currentLight = 'flashing yellow';
+            setTimeout(cycleLights, duration * 1000);
             break;
         case 'flashing yellow':
             if (flashingTimes < 3) {
                 switchLight('flashing yellow');
-                setTimeout(() => { flashingTimes++; cycleLights(); }, 1000);
+                flashingTimes++;
+                setTimeout(cycleLights, 1000);
             } else {
                 flashingTimes = 0;
                 currentLight = 'red';
@@ -60,7 +74,10 @@ const cycleLights = () => {
     }
 };
 
-startButton.addEventListener('click', cycleLights);
+startButton.addEventListener('click', () => {
+    currentLight = 'red';
+    cycleLights();
+});
 
 manualSwitchButton.addEventListener('click', () => {
     if (currentLight === 'red') currentLight = 'yellow';

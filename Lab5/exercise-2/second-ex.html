@@ -23,9 +23,9 @@
             <div class="light" id="green-light"></div>
         </div>
         <div id="state-duration">
-            <input type="number" id="red-duration" placeholder="Red (Default: 5s)">
-            <input type="number" id="yellow-duration" placeholder="Yellow (Default: 3s)">
-            <input type="number" id="green-duration" placeholder="Green (Default: 7s)">
+            <input type="number" min="0" max="60" id="red-duration" placeholder="Red (Default: 5s)">
+            <input type="number" min="0" max="60" id="yellow-duration" placeholder="Yellow (Default: 3s)">
+            <input type="number" min="0" max="60" id="green-duration" placeholder="Green (Default: 7s)">
         </div>
         <button id="start">Start Simulation</button>
         <button id="manual-switch">Manual Switch</button>
