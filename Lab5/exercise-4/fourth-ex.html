@@ -20,19 +20,19 @@
         <div class="form-section">
             <h2>Add Product</h2>
             <input type="text" id="add-name" placeholder="Name">
-            <input type="number" id="add-price" placeholder="Price">
-            <input type="number" id="add-quantity" placeholder="Quantity">
+            <input type="number" min="0" id="add-price" placeholder="Price">
+            <input type="number" min="0" id="add-quantity" placeholder="Quantity">
             <button onclick="addProduct()">Add Product</button>
 
-            <input type="number" id="search-id" placeholder="Product ID">
+            <input type="number" min="0" id="search-id" placeholder="Product ID">
             <button onclick="searchProduct()">Search</button>
 
-            <input type="number" id="delete-id" placeholder="Product ID to Delete">
+            <input type="number" min="0" id="delete-id" placeholder="Product ID to Delete">
             <button onclick="deleteProduct()">Delete</button>
 
             <h2>Make an Order</h2>
-            <input type="number" id="order-id" placeholder="Product ID">
-            <input type="number" id="order-quantity" placeholder="Quantity">
+            <input type="number" min="0" id="order-id" placeholder="Product ID">
+            <input type="number" min="0" id="order-quantity" placeholder="Quantity">
             <button onclick="placeOrder()">Order</button>
         </div>
         

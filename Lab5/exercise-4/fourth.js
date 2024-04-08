@@ -6,10 +6,10 @@ let nextProductId = 1;
 function addProduct() {
     const name = document.getElementById('add-name').value;
     const price = parseFloat(document.getElementById('add-price').value);
-    const quantity = parseInt(document.getElementById('add-quantity').value);
+    const quantity = parseInt(document.getElementById('add-quantity').value, 10);
 
-    if (!name || isNaN(price) || isNaN(quantity)) {
-        alert('Please fill out all fields correctly.');
+    if (!name || isNaN(price) || price < 0 || isNaN(quantity) || quantity < 0) {
+        alert('Please fill out all fields correctly with non-negative values.');
         return;
     }
 
@@ -20,12 +20,23 @@ function addProduct() {
 }
 
 function deleteProduct() {
-    const productId = parseInt(document.getElementById('delete-id').value);
+    const input = document.getElementById('delete-id').value;
+    if (!validateInput(input)) return;
+    const productId = parseInt(input, 10);
     if (catalog.delete(productId)) {
         updateProductList();
     } else {
         alert('Product not found.');
     }
+}
+
+function validateInput(input) {
+    const value = parseInt(input, 10);
+    if (isNaN(value) || value < 1) {
+        alert('Invalid input.');
+        return false;
+    }
+    return true;
 }
 
 function searchProduct() {
