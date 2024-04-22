@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+    <link rel="stylesheet" href="./second.css">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="../exercise-1/first-ex.html">Task 1</a></li>
+            <li><a href="../exercise-2/second-ex.html">Task 2</a></li>
+            <li><a href="../exercise-3/third-ex.html">Task 3</a></li>
+            <li><a href="../exercise-4/fourth-ex.html">Task 4</a></li>
+          </ul>
+    </header>
+    <main>
+        <div class="traffic-light">
+            <div class="red-light light"></div>
+            <div class="yellow-light light"></div>
+            <div class="green-light light"></div>
+        </div>
+        <div id="state-duration">
+            <input type="number" min="0" max="60" id="red-duration" placeholder="Red (Default: 5s)">
+            <input type="number" min="0" max="60" id="yellow-duration" placeholder="Yellow (Default: 3s)">
+            <input type="number" min="0" max="60" id="green-duration" placeholder="Green (Default: 7s)">
+        </div>
+        <button id="start">Start Simulation</button>
+        <button id="manual-switch">Manual Switch</button>
+        <p id="state-description"></p>
+    </main>
+    <script src="./second.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb Selector</title>
+    <link rel="stylesheet" href="./first.css">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="../exercise-1/first-ex.html">Task 1</a></li>
+            <li><a href="../exercise-2/second-ex.html">Task 2</a></li>
+            <li><a href="../exercise-3/third-ex.html">Task 3</a></li>
+            <li><a href="../exercise-4/fourth-ex.html">Task 4</a></li>
+          </ul>
+    </header>
+    <main>
+        <div id="lamp-selector">
+            <input type="radio" id="incandescent" name="lamp-type" value="incandescent" checked>
+            <label for="incandescent">Incandescent</label>
+
+            <input type="radio" id="saving" name="lamp-type" value="saving">
+            <label for="energy-saving">Energy Saving</label>
+
+            <input type="radio" id="led" name="lamp-type" value="led">
+            <label for="led">LED</label>
+
+            <input type="radio" id="halogen" name="lamp-type" value="halogen">
+            <label for="halogen">Halogen</label>
+        </div>
+        
+        <div class="lamp-container">
+            <div class="lamp" id="dynamic-lamp">
+                <img id="lamp-image" src="" alt="Lamp Image">
+                <div class="light-effect"></div>
+            </div>
+        </div>
+
+        <input type="range" class="slider" min="0" max="100" value="50">
+        <div class="temperature-display">Temperature: 2700K</div>
+        <button class="toggle-button">Toggle Light</button>
+    </main>
+    <script src="./first.js"></script>
+</body>
+</html>

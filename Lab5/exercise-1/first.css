@@ -1,0 +1,157 @@
+* {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+}
+
+body {
+    background-color: #838383;
+}
+
+
+
+.target-div {
+    padding: 10px;
+    margin: 0px;
+
+    background-color: lightgray;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.slider {
+    width: 80%;
+    margin: 10px;
+    background-color: #515151;
+    border-radius: 5px;
+    appearance: none;
+    height: 10px;
+    cursor: pointer;
+    background: #acacac;
+    border-radius: 5px;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 24px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    background: #515151;
+}
+
+.toggle-button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    width: 90%;
+    background-color: #2a752c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #45a049;
+}
+
+.toggle-button:active {
+    background-color: #367d3e;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #515151;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(252, 252, 252);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover:not(.active) {
+    background-color: #111;
+}
+
+input[type="radio"] {
+    font-size: 25px;
+}
+
+.lamp {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.lamp img {
+    width: 100%;
+    height: 100%;
+}
+
+.lamp {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.lamp img {
+    width: 100%;
+    height: 100%;
+}
+
+.light-effect {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1%;
+    height: 1%;
+    border-radius: 50%;
+    transition: opacity 0.3s ease, box-shadow 0.4s ease;
+    opacity: 0.5;
+}
+
+.lamp.light-on.incandescent .light-effect {
+    opacity: 1;
+    box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.7);
+}
+
+.lamp.light-on.saving .light-effect {
+    opacity: 1;
+    box-shadow: 0 0 50px 50px rgba(225, 225, 116, 0.7);
+}
+
+.lamp.light-on.led .light-effect {
+    opacity: 1;
+    box-shadow: 0 0 50px 50px rgba(0, 255, 255, 0.7);
+}
+
+.lamp.light-on.halogen .light-effect {
+    opacity: 1;
+    box-shadow: 0 0 50px 50px rgba(171, 71, 171, 0.7);
+}
