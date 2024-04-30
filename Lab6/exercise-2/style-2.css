@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+body {
+    background-color: rgb(28, 28, 28)
+}
+
+.todo-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(73, 73, 73);
+    border-radius: 8px;
+}
+
+.add-item{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#newTaskInput {
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: rgb(72, 72, 72);
+    color: rgb(233, 233, 233);
+    font-size: 1.2em;
+    width: 50%;
+}
+
+#addTaskBtn, #taskFilter {
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: rgb(72, 72, 72);
+    color: rgb(233, 233, 233);
+    font-size: 1.2em;
+    width: 25%;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    display: grid;
+    grid-template-columns: 0.2fr 6fr 2fr 1fr; 
+    gap: 20px;
+    align-items: center;
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 3px solid rgb(42, 42, 42); 
+    box-sizing: border-box;
+    background-color: rgb(42, 42, 42);
+    color: #ddd;
+    border-radius: 5px;
+    font-size: 1.05em;
+    transition: background-color 1.5s ease; 
+}
+
+#taskList li.completed {
+    border: 3px solid rgb(4, 108, 4); 
+    color: rgb(26, 165, 26);
+    box-sizing: border-box;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.deleteBtn {
+    background-color: rgb(119, 17, 17);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.editBtn {
+    background-color: rgb(23, 23, 114);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
