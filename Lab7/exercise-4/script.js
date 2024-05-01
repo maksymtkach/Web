@@ -3,28 +3,31 @@ function createTabs(node) {
         let button = document.createElement('button');
         button.textContent = node.getAttribute('data-tabname');
         button.className = 'tab-button';
-        return {node, button};
+        return {node, button, tabs};
     });
 
     let tabButtons = document.createElement('div');
     tabs.forEach(tab => {
         tabButtons.appendChild(tab.button);
-        tab.button.addEventListener('click', () => {
-            for (let tab of tabs) {
-                if (tab.button === event.currentTarget) {
-                    tab.node.style.display = 'block';
-                    tab.button.classList.add('active');
-                    setTimeout(() => tab.node.style.opacity = 1, 10);
-                } else {
-                    tab.node.style.display = 'none';
-                    tab.node.style.opacity = 0;
-                    tab.button.classList.remove('active');
-                }
-            }
-        });
+        tab.button.addEventListener('click', () => selectTab(tab));
     });
     node.insertBefore(tabButtons, node.firstChild);
-    tabs[0].button.click();
+
+    selectTab(tabs[0]);
+}
+
+function selectTab(selectedTab) {
+    selectedTab.tabs.forEach(tab => {
+        if (tab.button === selectedTab.button) {
+            tab.node.style.display = 'block';
+            tab.node.style.opacity = 1;
+            tab.button.classList.add('active');
+        } else {
+            tab.node.style.display = 'none';
+            tab.node.style.opacity = 0;
+            tab.button.classList.remove('active');
+        }
+    });
 }
 
 createTabs(document.getElementById('tabs'));
