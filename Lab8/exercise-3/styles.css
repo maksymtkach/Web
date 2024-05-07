@@ -1,0 +1,32 @@
+.kanban-board {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .column {
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .column h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .task {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .task:hover {
+    background-color: #f0f0f0;
+  }
+  
